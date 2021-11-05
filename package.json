@@ -76,6 +76,14 @@
       "prettier"
     ],
     "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "printWidth": 90,
+          "bracketSpacing": false,
+          "trailingComma": "es5"
+        }
+      ],
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
       "react/no-unknown-property": "off",
@@ -88,11 +96,6 @@
         ]
       }
     ]
-  },
-  "prettier": {
-    "printWidth": 90,
-    "bracketSpacing": false,
-    "trailingComma": "es5"
   },
   "browserslist": {
     "production": [
@@ -113,10 +116,12 @@
   },
   "lint-staged": {
     "*.+(js|jsx|html)": [
-      "eslint . --fix"
+      "eslint . --fix",
+      "git add"
     ],
     "*.+(json|css|md)": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   }
 }
